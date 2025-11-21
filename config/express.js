@@ -2,59 +2,62 @@
 import express from "express";
 import compression from "compression";
 import cookieParser from "cookie-parser";
-import cors from "cors";
-import mongoSanitize from "express-mongo-sanitize";
 import rateLimit from "express-rate-limit";
+import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
+import { xss } from "express-xss-sanitizer";
 
 // Local modules
-import { xssSanitizer } from "../middlewares/xssSanitizer.js";
+import { mongoSanitizer } from "../middlewares/mongoSanitizer.js";
 
 export default (app) => {
-  // Security headers
+  // 1. Security headers
   app.use(helmet());
 
-  // CORS
+  // 2. CORS
+  const allowedOrigin = process.env.CLIENT_URL || "http://localhost:3000";
+  if (!process.env.CLIENT_URL) {
+    console.warn("CLIENT_URL not set, defaulting CORS origin to http://localhost:3000");
+  }
   app.use(
     cors({
-      origin: process.env.CLIENT_URL,
+      origin: allowedOrigin,
       credentials: true,
     })
   );
 
-  // Dev logging
+  // 3. Rate limiting
+  if (process.env.NODE_ENV === "production") {
+    const generalRateLimiter = rateLimit({
+      max: 100,
+      windowMs: 60 * 60 * 1000,
+      message: "Too many requests from this IP, try again later.",
+    });
+
+    const authRateLimiter = rateLimit({
+      max: 10,
+      windowMs: 15 * 60 * 1000,
+      message: "Too many login attempts, try again later.",
+    });
+
+    app.use("/api", generalRateLimiter);
+    app.use("/api/v1/auth", authRateLimiter);
+  }
+
+  // 4. Dev logging
   if (process.env.NODE_ENV === "development") {
     app.use(morgan("dev"));
   }
 
-  // Body parser
+  // 5. Body parsers
   app.use(express.json({ limit: "100kb" }));
   app.use(cookieParser());
 
-  // Data sanitization
-  app.use(xssSanitizer);
-  app.use((req, res, next) => {
-    if (req.body) req.body = mongoSanitize.sanitize(req.body);
-    if (req.params) req.params = mongoSanitize.sanitize(req.params);
-    next();
-  });
-  // Compression
+  // 6. Sanitizers (after body parsing)
+  app.use(xss()); // optional (see note below)
+  app.use(mongoSanitizer); // custom & safe
+
+  // 7. Compression
   app.use(compression());
-
-  // Rate limiting
-  const generalRateLimiter = rateLimit({
-    max: 100,
-    windowMs: 60 * 60 * 1000, // 1 hour
-    message: "Too many requests from this IP, try again later.",
-  });
-
-  const authRateLimiter = rateLimit({
-    max: 10,
-    windowMs: 15 * 60 * 1000, // 15 min
-    message: "Too many login attempts, try again later.",
-  });
-
-  app.use("/api", generalRateLimiter);
-  app.use("/api/v1/auth", authRateLimiter);
 };

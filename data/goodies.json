@@ -1,0 +1,50 @@
+[
+  {
+    "id": "figma",
+    "name": "Figma",
+    "description": "Collaborative interface design tool with real-time multiplayer editing.",
+    "logo": "https://static.figma.com/app/icon/1/icon-192.png",
+    "url": "https://www.figma.com",
+    "category": "Design"
+  },
+  {
+    "id": "github",
+    "name": "GitHub",
+    "description": "The world's leading platform for code hosting, pull requests, and collaboration.",
+    "logo": "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png",
+    "url": "https://github.com",
+    "category": "Developer"
+  },
+  {
+    "id": "vscode",
+    "name": "VS Code",
+    "description": "Lightweight and powerful code editor with an extensive extension ecosystem.",
+    "logo": "https://code.visualstudio.com/assets/branding/code-stable.png",
+    "url": "https://code.visualstudio.com",
+    "category": "Developer"
+  },
+  {
+    "id": "postman",
+    "name": "Postman",
+    "description": "API platform for testing, mocking, and collaborating on APIs.",
+    "logo": "https://i.pinimg.com/736x/af/56/f1/af56f108b57d8ae3d56ff91ff4f1670f.jpg",
+    "url": "https://www.postman.com",
+    "category": "Developer"
+  },
+  {
+    "id": "docker",
+    "name": "Docker",
+    "description": "Platform for building, running, and shipping containerized applications.",
+    "logo": "https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png",
+    "url": "https://www.docker.com",
+    "category": "Developer"
+  },
+  {
+    "id": "vercel",
+    "name": "Vercel",
+    "description": "Modern deployment platform built for frontend frameworks and edge functions.",
+    "logo": "https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png",
+    "url": "https://vercel.com",
+    "category": "Developer"
+  }
+]

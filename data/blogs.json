@@ -1,0 +1,70 @@
+[
+  {
+    "title": "Mastering React in 2024: A Complete Guide",
+    "slug": "mastering-react-in-2024",
+    "excerpt": "A beginner-friendly yet comprehensive guide that explores the latest features of React, best practices, and modern tooling.",
+    "content": "React continues to dominate the frontend landscape in 2024. In this guide, we explore component patterns, hooks, state management techniques, performance tips, and how to structure enterprise-level React apps.",
+    "coverImage": "https://images.unsplash.com/photo-1587620962725-abab7fe55159",
+    "gallery": [
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c",
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+    ],
+    "tags": ["React", "Frontend", "JavaScript", "Web Development"],
+    "category": "Frontend",
+    "author": "BekauriDev",
+    "status": "published",
+    "isFeatured": true
+  },
+  {
+    "title": "The Hidden Power of Tailwind CSS",
+    "slug": "the-hidden-power-of-tailwind-css",
+    "excerpt": "Tailwind CSS has taken over the frontend world thanks to its flexibility and ease of use. Here’s why developers love it.",
+    "content": "Tailwind CSS enables you to build modern user interfaces incredibly fast. This article explores utility-first workflows, responsive patterns, common component structures, and how Tailwind improves developer productivity.",
+    "coverImage": "https://images.unsplash.com/photo-1517433456452-f9633a875f6f",
+    "gallery": [],
+    "tags": ["Tailwind", "CSS", "Styling", "UI"],
+    "category": "Frontend",
+    "author": "BekauriDev",
+    "status": "published",
+    "isFeatured": false
+  },
+  {
+    "title": "Understanding Node.js Event Loop Like a Pro",
+    "slug": "understanding-nodejs-event-loop-like-a-pro",
+    "excerpt": "A deep dive into the event loop, microtasks, message queues, and how Node.js handles asynchronous operations.",
+    "content": "The Node.js event loop is a powerful mechanism that allows JavaScript to perform non-blocking operations. In this blog, we explore each phase of the event loop, microtasks, timers, I/O callbacks, and best practices for performance.",
+    "coverImage": "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+    "gallery": ["https://images.unsplash.com/photo-1518779578993-ec3579fee39f"],
+    "tags": ["Node.js", "Backend", "JavaScript"],
+    "category": "Backend",
+    "author": "BekauriDev",
+    "status": "published",
+    "isFeatured": false
+  },
+  {
+    "title": "How to Build Secure APIs with Express",
+    "slug": "how-to-build-secure-apis-with-express",
+    "excerpt": "Security is critical when developing backend systems. Learn about authentication, rate limiting, sanitization, and more.",
+    "content": "Modern APIs must be secure by default. This guide covers JWT authentication, password hashing, input sanitization, CORS best practices, rate limiting, Helmet, and how to properly secure Express-based APIs.",
+    "coverImage": "https://images.unsplash.com/photo-1556155092-8707de31f9c4",
+    "gallery": [],
+    "tags": ["Express", "Security", "API", "Node.js"],
+    "category": "Security",
+    "author": "BekauriDev",
+    "status": "published",
+    "isFeatured": true
+  },
+  {
+    "title": "Why Learning Git Early Makes You a Better Developer",
+    "slug": "why-learning-git-early-makes-you-a-better-developer",
+    "excerpt": "Git is more than just version control—it teaches you how to think like a real developer.",
+    "content": "Learning Git early gives you the confidence to collaborate, manage code efficiently, avoid breaking projects, and streamline your development workflow. This article explains branching, merging, rebasing, pull requests, and teamwork best practices.",
+    "coverImage": "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+    "gallery": [],
+    "tags": ["Git", "Developer Tools", "Collaboration"],
+    "category": "Tools",
+    "author": "BekauriDev",
+    "status": "published",
+    "isFeatured": false
+  }
+]
