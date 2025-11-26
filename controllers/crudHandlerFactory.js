@@ -28,7 +28,7 @@ export const indexDoc = (Model) => async (req, res, next) => {
   res.status(200).json({
     status: "success",
     results: doc.length,
-    data: { doc },
+    data: doc,
   });
 };
 
@@ -58,7 +58,7 @@ export const showDoc = (Model) => async (req, res, next) => {
 
   res.status(200).json({
     status: "success",
-    data: { doc },
+    data: doc,
   });
 };
 
@@ -68,7 +68,7 @@ export const storeDoc = (Model) => async (req, res, next) => {
 
   res.status(201).json({
     status: "success",
-    data: { doc },
+    data: doc,
   });
 };
 
@@ -92,7 +92,7 @@ export const updateDoc = (Model) => async (req, res, next) => {
 
   res.status(200).json({
     status: "success",
-    data: { doc },
+    data: doc,
   });
 };
 
