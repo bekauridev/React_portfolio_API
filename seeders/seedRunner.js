@@ -38,3 +38,5 @@ export const runSeed = async ({ model, dataFile, label }) => {
     process.exit();
   }
 };
+
+// Command example node seeders/goodiesSeeder.js -i (create) or -d (delete)
