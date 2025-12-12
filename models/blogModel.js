@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import slugify from "slugify";
-import { httpsUrlValidator } from "../utils/validators/urlValidator";
+import { httpsUrlValidator } from "../utils/validators/urlValidator.js";
 
 const blogSchema = new mongoose.Schema(
   {
