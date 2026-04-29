@@ -7,10 +7,12 @@ const buildCookieOptions = () => {
     throw new AppError("Invalid JWT_COOKIE_EXPIRES_IN_DAYS value", 500);
   }
 
+  const isProduction = process.env.NODE_ENV === "production";
+
   return {
     httpOnly: true, // prevent client-side JS access
-    sameSite: "strict", // reduce CSRF risk
-    secure: process.env.NODE_ENV === "production", // only over HTTPS
+    sameSite: isProduction ? "none" : "lax",
+    secure: isProduction, // sameSite "none" requires HTTPS
     maxAge: days * 24 * 60 * 60 * 1000, // days → ms
   };
 };

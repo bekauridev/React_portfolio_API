@@ -16,10 +16,18 @@ export default (app) => {
   app.use(helmet());
 
   // 2. CORS
-  const allowedOrigin = process.env.CLIENT_URL || "http://localhost:3000";
+  const allowedOrigin =
+    process.env.CLIENT_URL ||
+    (process.env.NODE_ENV === "production" ? undefined : "http://localhost:3000");
+
   if (!process.env.CLIENT_URL) {
+    const message = "CLIENT_URL must be set for production CORS cookie auth";
+    if (process.env.NODE_ENV === "production") {
+      throw new Error(message);
+    }
     console.warn("CLIENT_URL not set, defaulting CORS origin to http://localhost:3000");
   }
+
   app.use(
     cors({
       origin: allowedOrigin,
