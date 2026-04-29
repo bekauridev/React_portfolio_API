@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
 import slugify from "slugify";
-import validator from "validator";
-import urlRegex from "../utils/urlRegex.js";
-import { httpsUrlValidator } from "../utils/validators/urlValidator.js";
+import {
+  gitRepoUrlValidator,
+  httpsUrlValidator,
+} from "../utils/validators/urlValidator.js";
 const projectSchema = new mongoose.Schema(
   {
     slug: {
@@ -64,16 +65,7 @@ const projectSchema = new mongoose.Schema(
     gitRepo: {
       type: String,
       trim: true,
-      match: urlRegex,
-      validate: {
-        validator: (value) => {
-          return validator.isURL(value, {
-            require_protocol: true,
-            protocols: ["https", "git"],
-          });
-        },
-        message: "Git repository URL must be a valid HTTPS or Git URL",
-      },
+      validate: gitRepoUrlValidator,
     },
 
     database: {
