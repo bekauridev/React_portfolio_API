@@ -1,0 +1,52 @@
+[
+  {
+    "iconUrl": "https://res.cloudinary.com/duybptmkx/image/upload/v1777631114/React_portfolio/icons/javascript_ogmgvq.svg",
+    "name": "JavaScript",
+    "order": 1
+  },
+  {
+    "iconUrl": "https://res.cloudinary.com/duybptmkx/image/upload/v1777631115/React_portfolio/icons/laravel_mc3kek.svg",
+    "name": "Laravel",
+    "order": 2
+  },
+  {
+    "iconUrl": "https://res.cloudinary.com/duybptmkx/image/upload/v1777631115/React_portfolio/icons/nodejs_sulean.svg",
+    "name": "Node.js ･ Express.js",
+    "order": 3
+  },
+  {
+    "iconUrl": "https://res.cloudinary.com/duybptmkx/image/upload/v1777631118/React_portfolio/icons/react_uvjxsp.svg",
+    "name": "React",
+    "order": 4
+  },
+  {
+    "iconUrl": "https://res.cloudinary.com/duybptmkx/image/upload/v1777631114/React_portfolio/icons/html_faylpl.svg",
+    "name": "HTML",
+    "order": 5
+  },
+  {
+    "iconUrl": "https://res.cloudinary.com/duybptmkx/image/upload/v1777631116/React_portfolio/icons/pug_wpmaxb.svg",
+    "name": "Pug",
+    "order": 6
+  },
+  {
+    "iconUrl": "https://res.cloudinary.com/duybptmkx/image/upload/v1777631114/React_portfolio/icons/css_vg0jk1.svg",
+    "name": "CSS",
+    "order": 7
+  },
+  {
+    "iconUrl": "https://res.cloudinary.com/duybptmkx/image/upload/v1777631119/React_portfolio/icons/tailwindcss_nayji2.svg",
+    "name": "Tailwind CSS",
+    "order": 8
+  },
+  {
+    "iconUrl": "https://res.cloudinary.com/duybptmkx/image/upload/v1777631115/React_portfolio/icons/mongodb_ie8p6b.svg",
+    "name": "MongoDB",
+    "order": 9
+  },
+  {
+    "iconUrl": "https://res.cloudinary.com/duybptmkx/image/upload/v1777631119/React_portfolio/icons/supabase_augwov.svg",
+    "name": "Supabase",
+    "order": 10
+  }
+]
