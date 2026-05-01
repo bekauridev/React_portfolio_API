@@ -32,11 +32,12 @@ const educationSchema = new mongoose.Schema(
       validate: httpsUrlValidator,
     },
 
-    certificateUrl: {
-      type: String,
-      trim: true,
-      validate: httpsUrlValidator,
-    }, // link to certificate, school, etc.
+    order: {
+      type: Number,
+      required: true,
+      unique: true,
+      min: 0,
+    },
   },
   {
     timestamps: true,
