@@ -16,11 +16,19 @@ export default (app) => {
   app.use(helmet());
 
   // 2. CORS
-  const allowedOrigin =
-    process.env.CLIENT_URL ||
-    (process.env.NODE_ENV === "production" ? undefined : "http://localhost:3000");
+  const clientUrls = process.env.CLIENT_URL
+    ? process.env.CLIENT_URL.split(",")
+        .map((url) => url.trim())
+        .filter(Boolean)
+    : [];
 
-  if (!process.env.CLIENT_URL) {
+  const allowedOrigin = clientUrls.length
+    ? clientUrls
+    : process.env.NODE_ENV === "production"
+      ? undefined
+      : "http://localhost:3000";
+
+  if (!clientUrls.length) {
     const message = "CLIENT_URL must be set for production CORS cookie auth";
     if (process.env.NODE_ENV === "production") {
       throw new Error(message);
